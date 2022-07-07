@@ -4,7 +4,7 @@ const Modal=(props)=>{
     return null;
     
     return <>
-    <div style={{border:'2px solid grey',borderRadius:'10px', background:'lightgrey',width:"600px",padding:'20px',margin:'20px',marginLeft:'30%'}}>
+    <div style={{border:'2px solid grey',borderRadius:'10px', background:'lightyellow',width:"600px",padding:'20px',margin:'20px',marginLeft:'30%'}}>
         <div style={{borderBottom:'2px solid red'}}>
             <h4>{props.title}</h4>
         </div>

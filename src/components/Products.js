@@ -69,31 +69,32 @@ const Products=()=>{
     return <>
     <div style={{margin:'20px'}}>
     <h1 style={{textAlign:"center",fontFamily:'inherit'}}>Shopping Products</h1>
-     <Modal title={formData.id? 'Edit Product' :'Add Product'} open={showModal}>   
+    <Modal title={formData.id? 'Edit Product' :'Add Product'} open={showModal}>   
   
-    <label for="name">Name:</label>
-    <input type="text" class="form-control"  value={formData.name} id="name" name="name" onChange={onInputChange}></input>   
- 
-    <label for="category">Category:</label>
-    <input type="text" class="form-control" value={formData.category} id="category" name="category" onChange={onInputChange}></input>  
-    <label for="category">Price:</label>
-    <input type="text" class="form-control" value={formData.price} id="price" name="price" onChange={onInputChange}></input>  
-  
-    <label for="img">Image URL:</label>
-    <input type="text" class="form-control" value={formData.img} id="img" name="img" onChange={onInputChange}></input>  
- <div style={{margin:'10px'}}>
-     {
-         formData.id?
-         <button style={{marginRight:'30px'}} type="submit" class="btn btn-primary" onClick={Edit}>Edit</button>
-         :
-         <button style={{marginRight:'30px'}} type="submit" class="btn btn-primary" onClick={onAdd}>Add</button>
-     }
+  <label for="name">Name:</label>
+  <input type="text" class="form-control"  value={formData.name} id="name" name="name" onChange={onInputChange}></input>   
 
-  <button class="btn btn-primary" onClick={()=>{setShowModal(false);setformData({});}}>Close</button>
- </div>
-  
+  <label for="category">Category:</label>
+  <input type="text" class="form-control" value={formData.category} id="category" name="category" onChange={onInputChange}></input>  
+  <label for="category">Price:</label>
+  <input type="text" class="form-control" value={formData.price} id="price" name="price" onChange={onInputChange}></input>  
 
-    </Modal>
+  <label for="img">Image URL:</label>
+  <input type="text" class="form-control" value={formData.img} id="img" name="img" onChange={onInputChange}></input>  
+<div style={{margin:'10px'}}>
+   {
+       formData.id?
+       <button style={{marginRight:'30px'}} type="submit" class="btn btn-primary" onClick={Edit}>Save</button>
+       :
+       <button style={{marginRight:'30px'}} type="submit" class="btn btn-primary" onClick={onAdd}>Add</button>
+   }
+
+<button class="btn btn-primary" onClick={()=>{setShowModal(false);setformData({});}}>Close</button>
+</div>
+
+
+  </Modal>
+  <button style={{marginLeft:"45%",marginTop:'20px'}} type="button" class="btn btn-success" onClick={()=>setShowModal(true)}>Add Product</button>
     <div style={{display:'flex',flexWrap:"wrap"}}>
     {
         products.map(item=>{
@@ -112,8 +113,7 @@ const Products=()=>{
             )
         })
     }</div>
-    <button style={{marginLeft:"45%",marginTop:'20px'}} type="button" class="btn btn-success" onClick={()=>setShowModal(true)}>Add Product</button>
-    </div>
+  </div>
     </>
 }
 export default Products;
